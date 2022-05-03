@@ -1,0 +1,119 @@
+@import "/styles/normalize.css";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* color palette */
+:root {
+  --color-primary: hsl(179, 62%, 43%);
+  --color-primary-lighten: hsl(179, 56%, 51%);
+  --color-secondary: hsl(71, 73%, 54%);
+  --color-accent: hsl(204, 43%, 93%);
+  --color-text: hsl(218, 22%, 67%);
+}
+
+/* typography */
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--color-accent);
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+h2 {
+  color: var(--color-primary);
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h2,
+h3 {
+  font-weight: 700;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.card--white p {
+  color: var(--color-text);
+}
+
+/* card */
+.card {
+  width: 320px;
+  display: grid;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 18px 100px -50px black;
+}
+
+.card--white {
+  background-color: white;
+}
+
+.card--white h3 {
+  color: var(--color-secondary);
+}
+
+.card--dark-cyan {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.card--light-cyan {
+  background-color: var(--color-primary-lighten);
+  color: white;
+}
+
+.money-back,
+.subscription,
+.why-us {
+  padding: 2.5rem;
+  display: grid;
+  gap: 2.4rem;
+}
+
+.subscription > p > span {
+  font-size: 3rem;
+}
+
+.why-us p {
+  width: 215px;
+  line-height: 2.5ch;
+}
+
+/* button */
+.button {
+  text-decoration: none;
+  background-color: var(--color-secondary);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 1.5rem;
+  box-shadow: 0px 6px 22px -15px black;
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    width: 640px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .money-back {
+    grid-column: 1/-1;
+  }
+}
